@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const weather = require("./weather");
-router.get("/weather", weather);
+const find = require("./find");
+router.get("/", weather);
+router.get("/find", find);
 module.exports = router;
