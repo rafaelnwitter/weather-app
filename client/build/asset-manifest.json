@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6926bb17.css",
+    "main.js": "/static/js/main.25d170ea.js",
+    "static/media/cloudy_day_bg.png": "/static/media/cloudy_day_bg.00e2b50ac3afe34055ea.png",
+    "static/media/day_bg.jpg": "/static/media/day_bg.bfd22cb1f7d0b2930434.jpg",
+    "static/media/night_bg.jpg": "/static/media/night_bg.2dd54699ca2b2c0c6119.jpg",
+    "static/media/snowy_day_bg.webp": "/static/media/snowy_day_bg.01c0d93dcdf1fa2e94ea.webp",
+    "static/media/thunderstorm_bg.jpg": "/static/media/thunderstorm_bg.47c258bdd5ea90997387.jpg",
+    "static/media/haze_night_bg.jpg": "/static/media/haze_night_bg.7c1d00bbbb4e4aa8e61b.jpg",
+    "static/media/haze_day_bg.jpg": "/static/media/haze_day_bg.adaeb9721bdf508448d8.jpg",
+    "static/media/cloudy_night_bg.jpg": "/static/media/cloudy_night_bg.71866d99e63e83d3f741.jpg",
+    "static/media/rain.svg": "/static/media/rain.48f72aa8dc91dd11cae12e56d5040a61.svg",
+    "static/media/11n.svg": "/static/media/11n.3f6be7245fe89640bff2.svg",
+    "static/media/rainy_bg.webp": "/static/media/rainy_bg.2a34e6dd89c0a0ab01ac.webp",
+    "static/media/11d.svg": "/static/media/11d.404a9e452e6509bb1429.svg",
+    "static/media/13n.svg": "/static/media/13n.5c4df2078725e6dc70f2.svg",
+    "static/media/climateLogo.svg": "/static/media/climateLogo.9f540975405d35bd9fbfd59dc24d0e81.svg",
+    "static/media/inicial.svg": "/static/media/inicial.da2f300f641a5ccaee6ad3cc4f2810fa.svg",
+    "static/media/50n.svg": "/static/media/50n.c8a96bdf1a69521257bd.svg",
+    "static/media/09n.svg": "/static/media/09n.9e51803da86fc2b11e35.svg",
+    "static/media/sun.svg": "/static/media/sun.a9155525cf780ff95c8413e61c51f2fc.svg",
+    "static/media/02n.svg": "/static/media/02n.dcb94708dd1a0a4f427d.svg",
+    "static/media/snow.svg": "/static/media/snow.b716a713ad3497b42afdfb1181d9b384.svg",
+    "static/media/cloudy.svg": "/static/media/cloudy.d03e3e4e16a33c9ea4233743c6cc8b68.svg",
+    "static/media/thunder.svg": "/static/media/thunder.b222c73bbd80110fe773bf7b00ae7247.svg",
+    "static/media/13d.svg": "/static/media/13d.1267b2f82ae4b64c6127.svg",
+    "static/media/09d.svg": "/static/media/09d.4c17e50d35caa21261b7.svg",
+    "static/media/50d.svg": "/static/media/50d.46e756e1654f17b77d0a.svg",
+    "static/media/04.svg": "/static/media/04.6e9e6e5fddd3d14345f95e9e73381976.svg",
+    "static/media/02d.svg": "/static/media/02d.932758eb8269fb776fe2.svg",
+    "static/media/01d.svg": "/static/media/01d.79682a3039aeffb721a7.svg",
+    "static/media/10.svg": "/static/media/10.909e7fe46267422683d0.svg",
+    "static/media/01n.svg": "/static/media/01n.b187a9cbd43c32b2fbd5.svg",
+    "index.html": "/index.html",
+    "main.6926bb17.css.map": "/static/css/main.6926bb17.css.map",
+    "main.25d170ea.js.map": "/static/js/main.25d170ea.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6926bb17.css",
+    "static/js/main.25d170ea.js"
+  ]
+}
