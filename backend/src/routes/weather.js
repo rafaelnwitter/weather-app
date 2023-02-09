@@ -14,14 +14,15 @@ async function getCoord(lat, lon) {
   return response;
 }
 
-
 //controller function 
 module.exports = async (req, res) => {
   if (req.query["city"]) {
     let responseData = await getW(req.query["city"]);
     res.send(responseData.data);
-  } else {
+  } else if(req.query["lat"] && req.query["lon"]) {
     let responseData = await getCoord(req.query["lat"], req.query["lon"]);
     res.send(responseData.data);
+  } else {
+    res.send({"error": "cidade invalida"});
   }
 };
