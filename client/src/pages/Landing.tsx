@@ -304,8 +304,7 @@ function Landing() {
     function capitalizeString(string: string) {
       return string[0].toUpperCase() + string.slice(1)
     }
-    const aa = `<div>${selectedUf}</div>`
-    const ac = `<div>${selectedCity}</div>`
+
     return (
       <div id="main" >
         <div className="background">
@@ -317,9 +316,7 @@ function Landing() {
           </div>
           <MotionBox>
             <div className="content">
-              <div className="principal">
-               {aa}
-               {ac}   
+              <div className="principal"> 
                 <div className="header">
                   <form onSubmit={handleCity}>                
                     <div className="extras">
