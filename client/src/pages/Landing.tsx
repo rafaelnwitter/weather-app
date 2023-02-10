@@ -264,7 +264,14 @@ function Landing() {
 
     const handleCity = async (e: FormEvent) => {
       e.preventDefault();
-      await api.get('', {
+      // fetch(`/api&city=${city}`)
+      //   .then(response => response.json())
+      //   .then(response => setData(response.data))
+      //   .catch(() => { setValid(false) })
+      // if (data.name !== '-') {
+      //   setValid(true)
+      // }
+      await api.get('/api', {
         params: { city }
       }).then(response => {
         setData(response.data)
@@ -276,7 +283,7 @@ function Landing() {
     }
 
     async function handleCityByCordinates(lat: number, lon: number) {
-      await api.get('', { params: { lat, lon } }).then(response => {
+      await api.get('api', { params: { lat, lon } }).then(response => {
         setValid(true)
         setData(response.data)
       })
@@ -287,13 +294,13 @@ function Landing() {
         setCity(value)
         const query = `https://openweathermap.org/data/2.5/find?q=${value.trim()}&type=like&sort=population&cnt=30&appid=439d4b804bc8187953eb36d2a8c26a02&_=1604490628153`;
 
-        // await search.get('/find', {params: {"city": value.trim()}}).then(response => {
-        //   setResults(response.data)
-        // });
-        await axios.get(query).then(response => {
+        await search.get('api/find', { params: { value } }).then(response => {
           setResults(response.data)
-          console.log(response.data)
         });
+        // await axios.get(query).then(response => {
+        //   setResults(response.data)
+        //   console.log(response.data)
+        // });
         setValid(true);
       } catch (err) {
         setValid(false);
