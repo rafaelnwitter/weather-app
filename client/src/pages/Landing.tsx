@@ -31,7 +31,6 @@ import rainyBg from '../assets/images/Backgrounds/rainy_bg.webp';
 import api from '../services/api';
 import search from '../services/search';
 import { LocationContext } from '../contexts/LocationContext';
-import { DebounceInput } from 'react-debounce-input';
 import { MotionBox } from '../components/MotionBox';
 import { SelectEstado } from "../components/SelectEstado";
 import { SelectCidade } from "../components/SelectCidade";
@@ -81,20 +80,6 @@ interface SearchData {
     }
   }>
 }
-
-interface Regiao {
-  id: number;
-  sigla: string;
-  nome: string;
-}
-
-interface IEstado {
-  id: number;
-  sigla: string;
-  nome: string;
-  regiao: Regiao;
-}
-
 
 function Landing() {
   const dadosInicias: WeatherData = {
@@ -277,10 +262,8 @@ function Landing() {
         break
     }
 
-    async function handleCity(e: FormEvent) {
+    const handleCity = async (e: FormEvent) => {
       e.preventDefault();
-      console.log(city)
-      console.log(1,selectedCity)
       await api.get('', {
         params: { city }
       }).then(response => {
@@ -302,10 +285,9 @@ function Landing() {
     async function handleChangeValue(value: string) {
       try {
         setCity(value)
-        setSelectedCity(value)
         const query = `https://openweathermap.org/data/2.5/find?q=${value.trim()}&type=like&sort=population&cnt=30&appid=439d4b804bc8187953eb36d2a8c26a02&_=1604490628153`;
 
-        // await search.get('/find', {params: {"value": value.trim()}}).then(response => {
+        // await search.get('/find', {params: {"city": value.trim()}}).then(response => {
         //   setResults(response.data)
         // });
         await axios.get(query).then(response => {
@@ -322,7 +304,8 @@ function Landing() {
     function capitalizeString(string: string) {
       return string[0].toUpperCase() + string.slice(1)
     }
-
+    const aa = `<div>${selectedUf}</div>`
+    const ac = `<div>${selectedCity}</div>`
     return (
       <div id="main" >
         <div className="background">
@@ -335,10 +318,8 @@ function Landing() {
           <MotionBox>
             <div className="content">
               <div className="principal">
-                  
-
-
-
+               {aa}
+               {ac}   
                 <div className="header">
                   <form onSubmit={handleCity}>                
                     <div className="extras">
@@ -353,19 +334,13 @@ function Landing() {
                     </div>
 
                     <div className="input-wrapper">
-                        <SelectEstado onChange={setSelectedUf} />
-                        <SelectCidade uf={selectedUf} onChange={setSelectedCity} />
-                      <DebounceInput
-                        placeholder="Digite uma cidade"
-                        type="text"
+                      <SelectEstado onChange={setSelectedUf} />
+                      <SelectCidade
+                        uf={selectedUf.toLowerCase()}
                         name="city"
-                        value={selectedCity}
-                        onChange={event => { handleChangeValue(event.target.value) }}
+                        onChange={setSelectedCity}
                         className="cityInput"
-                        autoComplete="off"
-                        debounceTimeout={300}
                       />
-                  
 
                       <div className="search-results">
                         {results && results.list.map(result => {
@@ -382,7 +357,7 @@ function Landing() {
 
                       </div>
 
-                      <button type="submit" className="searchButton">
+                      <button type="submit" className="searchButton" onClick={async () => await handleChangeValue(selectedCity)}>
                         <RiSearchLine />
                       </button>
                     </div>                  

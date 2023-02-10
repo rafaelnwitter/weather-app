@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 export interface ICidade {
   nome: string;
   codigo_ibge: string;
@@ -8,8 +7,6 @@ export interface ICidade {
 export const useCidades = ( {uf}: any ) => {
   const [cidades, setCidades] = useState<ICidade[]>([]);
   const [loading, setLoading] = useState(false);
-  const [cidade, setCidadae] = useState();
-
 
   useEffect(() => {
     if (!uf) return;

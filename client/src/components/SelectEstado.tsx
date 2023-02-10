@@ -17,9 +17,9 @@ export const SelectEstado = ({ onChange }: any) => {
 
   const handleEstadoUpdate = (event: any) => {
     setSelectedEstado(event.value);
-    console.log(event.value);
+    console.log("event value estado", event.value);
     const selectedUf = estados.find((e) => e.id === event.value)?.sigla;
-    console.log(selectedUf);
+    console.log("event string estado", selectedUf);
     onChange(selectedUf);
   };
 

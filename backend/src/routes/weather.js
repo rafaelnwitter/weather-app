@@ -22,7 +22,5 @@ module.exports = async (req, res) => {
   } else if(req.query["lat"] && req.query["lon"]) {
     let responseData = await getCoord(req.query["lat"], req.query["lon"]);
     res.send(responseData.data);
-  } else {
-    res.send({"error": "cidade invalida"});
   }
 };

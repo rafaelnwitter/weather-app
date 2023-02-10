@@ -2,11 +2,11 @@ import { useState } from "react";
 import Select from "react-select";
 import { useCidades } from "../hooks/useCidades";
 
-export const SelectCidade = ({uf}: any, { onChange }: any) => {
+export const SelectCidade = ({ onChange, uf }: any) => {
   const { cidades, loading: loadingCidades } = useCidades({
     uf
   });
-  const [selectedCity, setCity] = useState<string | null>(null);
+  const [selectedCity, setSelectedCity] = useState("");
 
 
   const cidadeOptions = cidades.map((cidade) => ({
@@ -19,8 +19,8 @@ export const SelectCidade = ({uf}: any, { onChange }: any) => {
   );
 
   const handleCityUpdate = (event: any) => {
-    setCity(event.value);
-    console.log(event.label);
+    setSelectedCity(event.value);
+    console.log("event value city", event.value);
     const selectedCity = cidades.find((e) => e.codigo_ibge === event.value)?.nome;
     console.log("slec", selectedCity)
 
