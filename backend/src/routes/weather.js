@@ -17,8 +17,8 @@ async function getCoord(lat, lon) {
 //controller function 
 module.exports = async (req, res) => {
   if (req.query["city"]) {
-    let responseData = await getW(req.query["city"]);
-    res.send(responseData.data);
+    return await getW(req.query["city"]).then((response) => res.send(response.data)).catch(err => console.error(err));
+
   } else if(req.query["lat"] && req.query["lon"]) {
     let responseData = await getCoord(req.query["lat"], req.query["lon"]);
     res.send(responseData.data);

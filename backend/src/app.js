@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-const path = require('path');
+const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -13,7 +13,7 @@ const middleware = require("../src/routes");
 const app = express();
 
 // Fazer com que o Node sirva os arquivos do app em React criado
-app.use(express.static(path.resolve(__dirname, '../client/build')));
+// app.use(express.static(path.resolve(__dirname, "../../client/build")));
 
 // adding Helmet to enhance your API's security
 app.use(helmet());
@@ -26,11 +26,11 @@ app.use(cors());
 
 // adding morgan to log HTTP requests
 // app.use(morgan("dev"));
-app.use("/", middleware);
+app.use("/api", middleware);
 
 // Todas as outras solicitações GET não tratadas retornarão nosso app em React
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.resolve(__dirname, "../../client/build", "index.html"));
+// });
 
 module.exports = app;
